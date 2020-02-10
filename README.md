@@ -1,2 +1,2 @@
 # TestGitHubActionsSupport
-Hello Word 
+Hello 
