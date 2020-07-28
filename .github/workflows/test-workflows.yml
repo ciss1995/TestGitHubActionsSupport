@@ -21,6 +21,6 @@ jobs:
 
       - name: Test Action
         uses: actions/neverendingqs/gh-action-node-bump-version-pr
-          with:
-            bump-version: patch
-            description: "Hello this is a description"
+        with:
+          bump-version: patch
+          description: "Hello this is a description"
