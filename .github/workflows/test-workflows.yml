@@ -20,7 +20,7 @@ jobs:
         run: echo 'Secret is ${{ secrets }}.'
 
       - name: Test Action
-        uses: actions/neverendingqs/gh-action-node-bump-version-pr
+        uses: neverendingqs/gh-action-node-bump-version-pr/releases/tag/v1.1.0
         with:
           bump-version: patch
           description: "Hello this is a description"
