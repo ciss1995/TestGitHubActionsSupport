@@ -24,3 +24,12 @@ jobs:
         with:
           bump-version: patch
           description: "Hello this is a description"
+
+      - name: Test Action other action
+        uses: actions/checkout@v2
+        ref: ccisse_test
+
+      - name: Test Action other action
+        uses: actions/checkout@v2
+        base: master    # the name of your default branch based on your PR changes here
+        branch: ccisse
