@@ -21,8 +21,8 @@ jobs:
 
       - name: Test Action other action
         uses: actions/checkout@v2
-        with: 
-          ref: ccisse
+
+      - run: git branch
 
       - name: Test Action other action
         uses: peter-evans/create-pull-request@v3
