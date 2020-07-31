@@ -31,4 +31,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: master    # the name of your default branch based on your PR changes here
-          branch: ccisse
+          branch: ccisse_other
