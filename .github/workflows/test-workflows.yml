@@ -27,7 +27,8 @@ jobs:
 
       - name: Test Action other action
         uses: actions/checkout@v2
-        ref: ccisse_test
+        with: 
+          ref: ccisse_test
 
       - name: Test Action other action
         uses: peter-evans/create-pull-request@v3
