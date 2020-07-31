@@ -32,6 +32,7 @@ jobs:
         with:
           commit-message: Update report
           branch: ccisse_other
+          base: master
           title: '[Example] Update report'
           body: |
             Update report
