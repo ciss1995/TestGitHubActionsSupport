@@ -30,6 +30,8 @@ jobs:
         ref: ccisse_test
 
       - name: Test Action other action
-        uses: actions/checkout@v2
+        uses: peter-evans/create-pull-request@v3
         base: master    # the name of your default branch based on your PR changes here
         branch: ccisse
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
