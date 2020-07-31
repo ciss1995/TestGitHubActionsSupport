@@ -31,7 +31,8 @@ jobs:
 
       - name: Test Action other action
         uses: peter-evans/create-pull-request@v3
-        base: master    # the name of your default branch based on your PR changes here
-        branch: ccisse
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          base: master    # the name of your default branch based on your PR changes here
+          branch: ccisse
