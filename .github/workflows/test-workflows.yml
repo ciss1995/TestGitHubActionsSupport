@@ -28,8 +28,10 @@ jobs:
 
       - name: Commit npm version bump
         run: |
-          git checkout ccisse_other
+          git fetch origin
+          git checkout master
           date +%s > report2.txt
+          git checkout ccisse_other
           git add .
           git commit -am "Npm version bump"
           git push -f origin ccisse_other
