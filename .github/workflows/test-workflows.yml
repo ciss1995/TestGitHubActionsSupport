@@ -31,7 +31,7 @@ jobs:
           git fetch origin
           git branch
           git checkout ccisse_other
-          git merge master
+          git merge origin/master
           date +%s > report2.txt
           git add .
           git commit -am "Npm version bump"
