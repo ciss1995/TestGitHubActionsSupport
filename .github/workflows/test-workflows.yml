@@ -30,6 +30,7 @@ jobs:
         run: |
           git fetch origin
           git checkout master
+          git branch
           date +%s > report2.txt
           git checkout ccisse_other
           git add .
