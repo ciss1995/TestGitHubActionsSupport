@@ -29,6 +29,8 @@ jobs:
       - name: Commit npm version bump
         run: |
           git fetch origin
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           git branch
           git checkout ccisse_other
           git merge origin/master
