@@ -43,10 +43,6 @@ jobs:
         uses: Brightspace/third-party-actions@actions/github-script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_AUTHOR_NAME: "d2lbot"
-          GIT_AUTHOR_EMAIL: "devinfrastructure@d2l.com"
-          GIT_COMMITTER_NAME: "d2lbot"
-          GIT_COMMITTER_EMAIL: "devinfrastructure@d2l.com"
         with:
           script: |
             github.pulls.create({
