@@ -29,9 +29,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git fetch
-          git diff origin/ccisse_other..origin/master --shortstat
-          VAR2=$(git diff origin/ccisse_other..origin/master --shortstat)
-          echo $VAR2
+          if git diff --exit-code origin/ccisse_other..origin/master --shortstat > /dev/null
+          echo "The image id is up to date"
+          then exit 1
+          fi
+          echo "Hello"
         id: hello2
 
       - name: Check diff 2
