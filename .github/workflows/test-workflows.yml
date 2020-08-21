@@ -24,11 +24,11 @@ jobs:
         with: 
           ref: ccisse_test
 
-      - name: Test Action other action
-        uses: peter-evans/create-pull-request@v3
+      - name: Check diff
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: master    # the name of your default branch based on your PR changes here
-          branch: ccisse
+        run: |
+          git diff master..ccisse_other
+        id: hello
+
+
