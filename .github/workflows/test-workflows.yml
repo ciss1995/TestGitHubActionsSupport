@@ -44,5 +44,4 @@ jobs:
           echo $VAR1
           if git diff --exit-code origin/master..origin/master --shortstat > /dev/null; then exit; fi
         id: hello22
-        env:
-          FIRST_NAME: $(git diff origin/master..origin/master --shortstat)
+
