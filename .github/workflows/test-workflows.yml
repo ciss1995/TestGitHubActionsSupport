@@ -30,7 +30,7 @@ jobs:
         run: |
           git fetch
           git diff origin/ccisse_other..origin/master --shortstat
-          VAR2=${git diff origin/ccisse_other..origin/master --shortstat}
+          VAR2=$(git diff origin/ccisse_other..origin/master --shortstat)
           echo $VAR2
         id: hello2
 
@@ -40,6 +40,6 @@ jobs:
         run: |
           git fetch
           git diff origin/master..origin/master --shortstat
-          VAR1=${git diff origin/master..origin/master --shortstat}
+          VAR1=$(git diff origin/master..origin/master --shortstat)
           echo $VAR1
         id: hello22
