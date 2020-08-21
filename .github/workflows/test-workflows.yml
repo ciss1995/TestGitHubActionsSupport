@@ -42,6 +42,9 @@ jobs:
           git diff origin/master..origin/master --shortstat
           VAR1=$(git diff origin/master..origin/master --shortstat)
           echo $VAR1
-          if git diff --exit-code origin/master..origin/master --shortstat > /dev/null; then exit 1; fi
+          if git diff --exit-code origin/master..origin/master --shortstat > /dev/null; 
+          echo "The image id is up to date"
+          then exit 1; 
+          fi
         id: hello22
 
