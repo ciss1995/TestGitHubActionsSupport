@@ -41,5 +41,3 @@ jobs:
           git diff origin/ccisse_other..origin/master --shortstat
           git diff origin/master..origin/master --shortstat
         id: hello22
-
-//--shortstat
