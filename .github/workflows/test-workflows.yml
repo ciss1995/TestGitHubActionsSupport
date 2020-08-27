@@ -45,7 +45,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           script: |
-            github.pulls.create({
+            const { data: newPr } = await github.pulls.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: 'Dependabots Weekly Updates',
@@ -58,5 +58,11 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ['Triage']
-            })
+            });
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `PR #${newPr.number} created for prettier JavaScript.`
+            });
   
