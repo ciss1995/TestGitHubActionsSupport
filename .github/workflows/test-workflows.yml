@@ -51,6 +51,6 @@ jobs:
               title: 'Dependabots Weekly Updates',
               head: 'refs/heads/ccisse_other',
               base: 'refs/heads/master',
-              labels: ['Triage']
+              label: 'Triage'
             });
   
