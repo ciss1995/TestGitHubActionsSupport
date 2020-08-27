@@ -53,10 +53,10 @@ jobs:
               base: 'refs/heads/master',
               label: 'Triage'
             });
-            github.issues.createComment({
+            github.issues.addLabels({
               issue_number: newPr.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `PR #${newPr.number} created for prettier JavaScript.`
+              labels: ['Triage']
             });
   
