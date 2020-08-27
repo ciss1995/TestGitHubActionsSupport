@@ -19,16 +19,44 @@ jobs:
       - name: Echo the greeting's time
         run: echo 'Secret is ${{ secrets }}.'
 
-      - name: Test Action other action
-        uses: actions/checkout@v2
-        with: 
-          ref: ccisse_test
+      - uses: actions/checkout@v2
 
-      - name: Test Action other action
-        uses: peter-evans/create-pull-request@v3
+      - name: Make changes to pull request
+        run: date +%s > report2.txt
+
+      - uses: Brightspace/third-party-actions@actions/checkout
+
+      - name: Commit npm version bump
+        run: |
+          git fetch origin
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git branch
+          git checkout ccisse_other
+          git merge origin/master
+          date +%s > report2.txt
+          git add .
+          git commit -am "Npm version bump"
+          git push -f origin ccisse_other
+
+      - name: Pull Request
+        uses: Brightspace/third-party-actions@actions/github-script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: master    # the name of your default branch based on your PR changes here
-          branch: ccisse
+          script: |
+            const { data: newPr } = await github.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Dependabots Weekly Updates',
+              head: 'refs/heads/ccisse_other',
+              base: 'refs/heads/master',
+              label: 'Triage'
+            });
+            github.issues.addLabels({
+              issue_number: newPr.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['Triage']
+            });
+  
