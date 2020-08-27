@@ -60,7 +60,7 @@ jobs:
               labels: ['Triage']
             });
             github.issues.createComment({
-              issue_number: context.issue.number,
+              issue_number: newPr.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: `PR #${newPr.number} created for prettier JavaScript.`
